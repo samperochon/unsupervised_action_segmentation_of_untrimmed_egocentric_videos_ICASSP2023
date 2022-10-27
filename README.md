@@ -1,2 +1,5 @@
-# unsupervised_action_segmentation_of_untrimmed_egocentric_videos_ICASSP2023
-This is the official implementation of our paper "Unsupervised action segmentation of untrimmed egocentric videos", submitted to ICASSP2023.
+# Unsupervised Action segmentation of Untrimmed Egocentric Videos
+This is the official implementation of our paper "Unsupervised Action segmentation of Untrimmed Egocentric Videos", submitted to ICASSP2023.
+
+
+
