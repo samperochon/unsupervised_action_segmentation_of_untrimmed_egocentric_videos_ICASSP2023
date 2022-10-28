@@ -330,11 +330,15 @@ class Pipeline(object):
                                 'f1_50': self.annotation.f1_50}, index=[0])
 
         results.to_csv(os.path.join(self.output_path, 'performances.csv'), index=False)
+        
+        if self.annotation.gt_label is not None:
 
-        predicted_actions = pd.DataFrame({'gt_label': self.annotation.gt_label, 
-                                        'pred_label' :  self.annotation.pred_frames_label})
-
-        predicted_actions.to_csv(os.path.join(self.output_path, 'gt_and_pred_labels.csv'), index=False)
+            predicted_actions = pd.DataFrame({'gt_label': self.annotation.gt_label, 
+                                            'pred_label' :  self.annotation.pred_frames_label})
+        else:
+            predicted_actions = pd.DataFrame({'pred_label' :  self.annotation.pred_frames_label})
+            
+        predicted_actions.to_csv(os.path.join(self.output_path, 'prediction.csv'), index=False)
 
         return 
 

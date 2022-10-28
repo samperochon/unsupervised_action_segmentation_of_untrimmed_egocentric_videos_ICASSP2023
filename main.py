@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import os
 import warnings
+import time
 warnings.filterwarnings("ignore")
 
 # Import our own algorithms
@@ -19,7 +20,8 @@ from src.const import DEFAULT_CONFIG
 ROOT = os.path.dirname(os.path.realpath(__file__))
 
 def main(video_path, ground_truth_path, num_clusters):
-    
+    start_time = time.time()
+
     # Create the video dataset
     dataset = VideoFrameDataset(filename=video_path, config=DEFAULT_CONFIG)
     
@@ -75,8 +77,9 @@ def main(video_path, ground_truth_path, num_clusters):
         print("Segment-wise F1@.10: {:.2f}".format(pipeline.annotation.f1_10))
         print("Segment-wise F1@.25: {:.2f}".format(pipeline.annotation.f1_25))
         print("Segment-wise F1@.50: {:.2f}".format(pipeline.annotation.f1_50))
-
-    print("Done!")
+        
+    print("--- Runtime: %s seconds ---" % (time.time() - start_time))
+    print("Done! You can find the output png of the segmentation in ./outputs/output.png, the performance in ./outputs/performances.csv, and segmentation in ./outputs/prediction.csv")
     return 
 
 
