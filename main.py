@@ -18,7 +18,7 @@ from src.const import DEFAULT_CONFIG
 #    torch.load(os.path.join(ROOT, 'weights.pth'))
 ROOT = os.path.dirname(os.path.realpath(__file__))
 
-def main(video_path, ground_truth_path, num_clusters, toggle_outlier_removal):
+def main(video_path, ground_truth_path, num_clusters):
     
     # Create the video dataset
     dataset = VideoFrameDataset(filename=video_path, config=DEFAULT_CONFIG)
@@ -76,6 +76,7 @@ def main(video_path, ground_truth_path, num_clusters, toggle_outlier_removal):
         print("Segment-wise F1@.25: {:.2f}".format(pipeline.annotation.f1_25))
         print("Segment-wise F1@.50: {:.2f}".format(pipeline.annotation.f1_50))
 
+    print("Done!")
     return 
 
 
