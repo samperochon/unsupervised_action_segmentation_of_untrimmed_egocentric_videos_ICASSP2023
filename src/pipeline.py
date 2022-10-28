@@ -12,7 +12,6 @@ import ruptures as rpt
 
 from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_samples
-from skimage.filters import threshold_otsu
 
 from .const import DEFAULT_CONFIG, MIN_SEGMENTS_SIZE
 from .utils import (fi, pairwise,  join_and_discard)
