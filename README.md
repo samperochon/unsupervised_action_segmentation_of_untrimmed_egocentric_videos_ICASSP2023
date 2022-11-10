@@ -6,7 +6,7 @@ The unsupervised temporal segmentation of actions in videos aims at estimating t
 
 We start by extracting frame-level features using a Resnet152 and perform a first step of background detections. We then use a kernel change points detection algorithm to find action boudaries within inlier segments of the video. The segments are then clustered into action classes using K-Means. We finally apply a segment-wise outlier detection step based on a clustering quality score to remove the remaining background segments.
 
-![](./images/illustration.png)
+![](./images/im.png)
 
 # Basic Usage
 
